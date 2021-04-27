@@ -30,3 +30,6 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+/__pycache__/helper.cpython-37.pyc
+/__pycache__/problem_unittests.cpython-37.pyc
+/__pycache__/workspace_utils.cpython-37.pyc
