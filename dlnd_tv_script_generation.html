@@ -13623,19 +13623,19 @@ tensor([ 33,  26,  22,  39,  16,  28,  11,  43,  30,  12])</code></pre>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>torch.Size([10, 5])
-tensor([[  1,   2,   3,   4,   5],
-        [ 32,  33,  34,  35,  36],
-        [  0,   1,   2,   3,   4],
-        [ 38,  39,  40,  41,  42],
-        [ 39,  40,  41,  42,  43],
-        [  9,  10,  11,  12,  13],
+tensor([[  3,   4,   5,   6,   7],
+        [ 26,  27,  28,  29,  30],
+        [  7,   8,   9,  10,  11],
         [ 35,  36,  37,  38,  39],
+        [ 14,  15,  16,  17,  18],
+        [ 20,  21,  22,  23,  24],
         [ 36,  37,  38,  39,  40],
         [ 21,  22,  23,  24,  25],
-        [ 43,  44,  45,  46,  47]])
+        [ 22,  23,  24,  25,  26],
+        [ 19,  20,  21,  22,  23]])
 
 torch.Size([10])
-tensor([  6,  37,   5,  43,  44,  14,  40,  41,  26,  48])
+tensor([  8,  31,  12,  40,  19,  25,  41,  26,  27,  24])
 </pre>
 </div>
 </div>
@@ -13671,7 +13671,7 @@ out = output[:, -1]</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
@@ -13850,8 +13850,7 @@ out = output[:, -1]</code></pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>torch.Size([2, 200, 10]) torch.Size([20, 15])
-Tests Passed
+<pre>Tests Passed
 </pre>
 </div>
 </div>
@@ -13959,7 +13958,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Training parameters</span>
@@ -13977,12 +13976,12 @@ Tests Passed
 <span class="c1"># Embedding Dimension</span>
 <span class="n">embedding_dim</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="c1"># Hidden Dimension</span>
-<span class="n">hidden_dim</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">hidden_dim</span> <span class="o">=</span> <span class="mi">256</span>
 <span class="c1"># Number of RNN Layers</span>
 <span class="n">n_layers</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="c1"># Show stats for every n number of batches</span>
-<span class="n">show_every_n_batches</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">show_every_n_batches</span> <span class="o">=</span> <span class="mi">1000</span>
 </pre></div>
 
     </div>
@@ -14021,7 +14020,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">workspace_utils</span> <span class="k">import</span> <span class="n">active_session</span>
@@ -14064,1395 +14063,65 @@ Tests Passed
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training for 10 epoch(s)...
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    1/10    Loss: 6.754002332687378
+Epoch:    1/10    Loss: 5.104968399524688
 
-Epoch:    1/10    Loss: 5.783677549362182
+Epoch:    1/10    Loss: 4.422602203845978
 
-Epoch:    1/10    Loss: 5.512040786743164
+Epoch:    1/10    Loss: 4.264546387672424
 
-Epoch:    1/10    Loss: 5.33436728477478
+Epoch:    2/10    Loss: 4.079395904824732
 
-Epoch:    1/10    Loss: 5.260386991500854
+Epoch:    2/10    Loss: 3.9776480877399445
 
-Epoch:    1/10    Loss: 5.092493495941162
+Epoch:    2/10    Loss: 3.9491389977931974
 
-Epoch:    1/10    Loss: 4.922589416503906
+Epoch:    3/10    Loss: 3.8304063169596727
 
-Epoch:    1/10    Loss: 4.947188768386841
+Epoch:    3/10    Loss: 3.790148490667343
 
-Epoch:    1/10    Loss: 4.908590421676636
+Epoch:    3/10    Loss: 3.774939481973648
 
-Epoch:    1/10    Loss: 4.8476275539398195
+Epoch:    4/10    Loss: 3.6862734324872455
 
-Epoch:    1/10    Loss: 4.752661437988281
+Epoch:    4/10    Loss: 3.662074829339981
 
-Epoch:    1/10    Loss: 4.7661817932128905
+Epoch:    4/10    Loss: 3.6517073135375977
 
-Epoch:    1/10    Loss: 4.699218139648438
+Epoch:    5/10    Loss: 3.5740383996441203
 
-Epoch:    1/10    Loss: 4.659927635192871
+Epoch:    5/10    Loss: 3.551288011074066
 
-Epoch:    1/10    Loss: 4.65328091621399
+Epoch:    5/10    Loss: 3.5666713223457336
 
-Epoch:    1/10    Loss: 4.622375621795654
+Epoch:    6/10    Loss: 3.480347367538803
 
-Epoch:    1/10    Loss: 4.654744424819946
+Epoch:    6/10    Loss: 3.4776455855369566
 
-Epoch:    1/10    Loss: 4.526517295837403
+Epoch:    6/10    Loss: 3.494041595220566
 
-Epoch:    1/10    Loss: 4.5379975891113284
+Epoch:    7/10    Loss: 3.417512641878367
 
-Epoch:    1/10    Loss: 4.559940905570984
+Epoch:    7/10    Loss: 3.413062949180603
 
-Epoch:    1/10    Loss: 4.567811193466187
+Epoch:    7/10    Loss: 3.4168312792778015
 
-Epoch:    1/10    Loss: 4.535636320114135
+Epoch:    8/10    Loss: 3.3616574310305314
 
-Epoch:    1/10    Loss: 4.483326597213745
+Epoch:    8/10    Loss: 3.354583024740219
 
-Epoch:    1/10    Loss: 4.5122496700286865
+Epoch:    8/10    Loss: 3.3699633486270906
 
-Epoch:    1/10    Loss: 4.453884077072144
+Epoch:    9/10    Loss: 3.300502358617776
 
-Epoch:    1/10    Loss: 4.472161073684692
+Epoch:    9/10    Loss: 3.306917853593826
 
-Epoch:    1/10    Loss: 4.422779569625854
+Epoch:    9/10    Loss: 3.3149654908180235
 
-Epoch:    1/10    Loss: 4.446971740722656
+Epoch:   10/10    Loss: 3.2754708766292446
 
-Epoch:    1/10    Loss: 4.437979984283447
+Epoch:   10/10    Loss: 3.2537249948978424
 
-Epoch:    1/10    Loss: 4.360345873832703
-
-Epoch:    1/10    Loss: 4.366444492340088
-
-Epoch:    1/10    Loss: 4.425569162368775
-
-Epoch:    1/10    Loss: 4.310151662826538
-
-Epoch:    1/10    Loss: 4.379227418899536
-
-Epoch:    1/10    Loss: 4.339719939231872
-
-Epoch:    1/10    Loss: 4.332869911193848
-
-Epoch:    1/10    Loss: 4.3347763299942015
-
-Epoch:    1/10    Loss: 4.361366348266602
-
-Epoch:    1/10    Loss: 4.298344516754151
-
-Epoch:    1/10    Loss: 4.283148398399353
-
-Epoch:    1/10    Loss: 4.284810371398926
-
-Epoch:    1/10    Loss: 4.333115854263306
-
-Epoch:    1/10    Loss: 4.271718068122864
-
-Epoch:    1/10    Loss: 4.278628244400024
-
-Epoch:    1/10    Loss: 4.258119096755982
-
-Epoch:    1/10    Loss: 4.247542462348938
-
-Epoch:    1/10    Loss: 4.276565575599671
-
-Epoch:    1/10    Loss: 4.269573149681091
-
-Epoch:    1/10    Loss: 4.23907555103302
-
-Epoch:    1/10    Loss: 4.20755934715271
-
-Epoch:    1/10    Loss: 4.21371413230896
-
-Epoch:    1/10    Loss: 4.242076506614685
-
-Epoch:    1/10    Loss: 4.204770045280457
-
-Epoch:    1/10    Loss: 4.217791419029236
-
-Epoch:    1/10    Loss: 4.19524085521698
-
-Epoch:    1/10    Loss: 4.206358346939087
-
-Epoch:    1/10    Loss: 4.212146687507629
-
-Epoch:    1/10    Loss: 4.181846981048584
-
-Epoch:    1/10    Loss: 4.1869652509689335
-
-Epoch:    1/10    Loss: 4.15543044090271
-
-Epoch:    1/10    Loss: 4.203838782310486
-
-Epoch:    1/10    Loss: 4.212928967475891
-
-Epoch:    1/10    Loss: 4.1503981924057
-
-Epoch:    1/10    Loss: 4.16345892906189
-
-Epoch:    1/10    Loss: 4.141106934547424
-
-Epoch:    1/10    Loss: 4.156742587089538
-
-Epoch:    1/10    Loss: 4.124740552902222
-
-Epoch:    1/10    Loss: 4.160108032226563
-
-Epoch:    1/10    Loss: 4.152029538154602
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    2/10    Loss: 4.0393340376359
-
-Epoch:    2/10    Loss: 4.045458264350891
-
-Epoch:    2/10    Loss: 3.9771390056610105
-
-Epoch:    2/10    Loss: 3.9902734899520875
-
-Epoch:    2/10    Loss: 4.009347381591797
-
-Epoch:    2/10    Loss: 3.975424828529358
-
-Epoch:    2/10    Loss: 4.031514358520508
-
-Epoch:    2/10    Loss: 3.997499370574951
-
-Epoch:    2/10    Loss: 3.956371350288391
-
-Epoch:    2/10    Loss: 3.950929365158081
-
-Epoch:    2/10    Loss: 3.971763319969177
-
-Epoch:    2/10    Loss: 3.992388939857483
-
-Epoch:    2/10    Loss: 3.963228931427002
-
-Epoch:    2/10    Loss: 3.9669651651382445
-
-Epoch:    2/10    Loss: 3.994444694519043
-
-Epoch:    2/10    Loss: 3.981992664337158
-
-Epoch:    2/10    Loss: 3.992805938720703
-
-Epoch:    2/10    Loss: 3.9706346559524537
-
-Epoch:    2/10    Loss: 3.988084144592285
-
-Epoch:    2/10    Loss: 3.9705718421936034
-
-Epoch:    2/10    Loss: 3.958431611061096
-
-Epoch:    2/10    Loss: 3.954883780479431
-
-Epoch:    2/10    Loss: 3.9686280059814454
-
-Epoch:    2/10    Loss: 3.9693649339675905
-
-Epoch:    2/10    Loss: 3.9976729774475097
-
-Epoch:    2/10    Loss: 3.9880718564987183
-
-Epoch:    2/10    Loss: 3.958558745384216
-
-Epoch:    2/10    Loss: 4.00648859500885
-
-Epoch:    2/10    Loss: 3.922563886642456
-
-Epoch:    2/10    Loss: 3.9619202470779418
-
-Epoch:    2/10    Loss: 3.9863817930221557
-
-Epoch:    2/10    Loss: 3.9665876626968384
-
-Epoch:    2/10    Loss: 3.9561246538162234
-
-Epoch:    2/10    Loss: 3.986886100769043
-
-Epoch:    2/10    Loss: 3.92170494556427
-
-Epoch:    2/10    Loss: 3.953681149482727
-
-Epoch:    2/10    Loss: 3.936016492843628
-
-Epoch:    2/10    Loss: 3.9110143184661865
-
-Epoch:    2/10    Loss: 3.952489423751831
-
-Epoch:    2/10    Loss: 3.9212162685394287
-
-Epoch:    2/10    Loss: 3.938475432395935
-
-Epoch:    2/10    Loss: 3.971567778587341
-
-Epoch:    2/10    Loss: 3.978201732635498
-
-Epoch:    2/10    Loss: 3.9338081312179565
-
-Epoch:    2/10    Loss: 3.9257108306884767
-
-Epoch:    2/10    Loss: 3.91486732006073
-
-Epoch:    2/10    Loss: 3.9311201095581056
-
-Epoch:    2/10    Loss: 3.986597557067871
-
-Epoch:    2/10    Loss: 3.8920404958724975
-
-Epoch:    2/10    Loss: 3.930804867744446
-
-Epoch:    2/10    Loss: 3.9112439346313477
-
-Epoch:    2/10    Loss: 3.9316303634643557
-
-Epoch:    2/10    Loss: 3.9345347356796263
-
-Epoch:    2/10    Loss: 3.8754476356506347
-
-Epoch:    2/10    Loss: 3.944517397880554
-
-Epoch:    2/10    Loss: 3.9145231008529664
-
-Epoch:    2/10    Loss: 3.8960421466827393
-
-Epoch:    2/10    Loss: 3.8790580701828
-
-Epoch:    2/10    Loss: 3.8958144044876097
-
-Epoch:    2/10    Loss: 3.928598527908325
-
-Epoch:    2/10    Loss: 3.89936279296875
-
-Epoch:    2/10    Loss: 3.9358649253845215
-
-Epoch:    2/10    Loss: 3.946336226463318
-
-Epoch:    2/10    Loss: 3.908526997566223
-
-Epoch:    2/10    Loss: 3.9106674337387086
-
-Epoch:    2/10    Loss: 3.877144012451172
-
-Epoch:    2/10    Loss: 3.9275982713699342
-
-Epoch:    2/10    Loss: 3.8530037069320677
-
-Epoch:    2/10    Loss: 3.9250319719314577
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    3/10    Loss: 3.8243371716028527
-
-Epoch:    3/10    Loss: 3.724678316116333
-
-Epoch:    3/10    Loss: 3.7654000329971313
-
-Epoch:    3/10    Loss: 3.7039155101776124
-
-Epoch:    3/10    Loss: 3.735022768974304
-
-Epoch:    3/10    Loss: 3.718588991165161
-
-Epoch:    3/10    Loss: 3.7759109926223755
-
-Epoch:    3/10    Loss: 3.7716987466812135
-
-Epoch:    3/10    Loss: 3.8054992818832396
-
-Epoch:    3/10    Loss: 3.7732774782180787
-
-Epoch:    3/10    Loss: 3.750048851966858
-
-Epoch:    3/10    Loss: 3.779671392440796
-
-Epoch:    3/10    Loss: 3.7418630123138428
-
-Epoch:    3/10    Loss: 3.792148680686951
-
-Epoch:    3/10    Loss: 3.7455332565307615
-
-Epoch:    3/10    Loss: 3.725942931175232
-
-Epoch:    3/10    Loss: 3.7470660829544067
-
-Epoch:    3/10    Loss: 3.777565140724182
-
-Epoch:    3/10    Loss: 3.7533081102371217
-
-Epoch:    3/10    Loss: 3.770634484291077
-
-Epoch:    3/10    Loss: 3.7996742582321166
-
-Epoch:    3/10    Loss: 3.768080587387085
-
-Epoch:    3/10    Loss: 3.729275050163269
-
-Epoch:    3/10    Loss: 3.774231123924255
-
-Epoch:    3/10    Loss: 3.727534084320068
-
-Epoch:    3/10    Loss: 3.720160083770752
-
-Epoch:    3/10    Loss: 3.7737242221832275
-
-Epoch:    3/10    Loss: 3.7755814456939696
-
-Epoch:    3/10    Loss: 3.7828458452224734
-
-Epoch:    3/10    Loss: 3.7514367055892945
-
-Epoch:    3/10    Loss: 3.709444923400879
-
-Epoch:    3/10    Loss: 3.7679771041870116
-
-Epoch:    3/10    Loss: 3.8244634294509887
-
-Epoch:    3/10    Loss: 3.7903014755249025
-
-Epoch:    3/10    Loss: 3.772319507598877
-
-Epoch:    3/10    Loss: 3.734066047668457
-
-Epoch:    3/10    Loss: 3.77832932472229
-
-Epoch:    3/10    Loss: 3.759520492553711
-
-Epoch:    3/10    Loss: 3.7316005563735963
-
-Epoch:    3/10    Loss: 3.7388703346252443
-
-Epoch:    3/10    Loss: 3.7429670667648316
-
-Epoch:    3/10    Loss: 3.7419204235076906
-
-Epoch:    3/10    Loss: 3.7461329746246337
-
-Epoch:    3/10    Loss: 3.7621944427490233
-
-Epoch:    3/10    Loss: 3.800168333053589
-
-Epoch:    3/10    Loss: 3.731799292564392
-
-Epoch:    3/10    Loss: 3.7169687652587893
-
-Epoch:    3/10    Loss: 3.7418417644500734
-
-Epoch:    3/10    Loss: 3.7920351696014403
-
-Epoch:    3/10    Loss: 3.7620709848403933
-
-Epoch:    3/10    Loss: 3.7537767124176025
-
-Epoch:    3/10    Loss: 3.7751066207885744
-
-Epoch:    3/10    Loss: 3.7485568380355834
-
-Epoch:    3/10    Loss: 3.7112727117538453
-
-Epoch:    3/10    Loss: 3.803063416481018
-
-Epoch:    3/10    Loss: 3.7407297849655152
-
-Epoch:    3/10    Loss: 3.7323409795761107
-
-Epoch:    3/10    Loss: 3.6818969106674193
-
-Epoch:    3/10    Loss: 3.734978241920471
-
-Epoch:    3/10    Loss: 3.728306131362915
-
-Epoch:    3/10    Loss: 3.691981987953186
-
-Epoch:    3/10    Loss: 3.737664232254028
-
-Epoch:    3/10    Loss: 3.7507823944091796
-
-Epoch:    3/10    Loss: 3.7113738012313844
-
-Epoch:    3/10    Loss: 3.7678449726104737
-
-Epoch:    3/10    Loss: 3.7360917377471923
-
-Epoch:    3/10    Loss: 3.7873676729202272
-
-Epoch:    3/10    Loss: 3.6899606943130494
-
-Epoch:    3/10    Loss: 3.7310722923278807
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    4/10    Loss: 3.6482143130483506
-
-Epoch:    4/10    Loss: 3.6266191482543944
-
-Epoch:    4/10    Loss: 3.5677479553222655
-
-Epoch:    4/10    Loss: 3.5930329942703247
-
-Epoch:    4/10    Loss: 3.5982747173309324
-
-Epoch:    4/10    Loss: 3.603263235092163
-
-Epoch:    4/10    Loss: 3.599887547492981
-
-Epoch:    4/10    Loss: 3.619108700752258
-
-Epoch:    4/10    Loss: 3.5990965461730955
-
-Epoch:    4/10    Loss: 3.585976700782776
-
-Epoch:    4/10    Loss: 3.5734780979156495
-
-Epoch:    4/10    Loss: 3.571369113922119
-
-Epoch:    4/10    Loss: 3.627720522880554
-
-Epoch:    4/10    Loss: 3.588928699493408
-
-Epoch:    4/10    Loss: 3.5983069705963135
-
-Epoch:    4/10    Loss: 3.6345790815353394
-
-Epoch:    4/10    Loss: 3.6299710369110105
-
-Epoch:    4/10    Loss: 3.65283429145813
-
-Epoch:    4/10    Loss: 3.6430599975585936
-
-Epoch:    4/10    Loss: 3.5974622774124145
-
-Epoch:    4/10    Loss: 3.611665711402893
-
-Epoch:    4/10    Loss: 3.6091594982147215
-
-Epoch:    4/10    Loss: 3.6450402879714967
-
-Epoch:    4/10    Loss: 3.6363992071151734
-
-Epoch:    4/10    Loss: 3.653160262107849
-
-Epoch:    4/10    Loss: 3.58078556060791
-
-Epoch:    4/10    Loss: 3.663785457611084
-
-Epoch:    4/10    Loss: 3.5840124464035035
-
-Epoch:    4/10    Loss: 3.602912817001343
-
-Epoch:    4/10    Loss: 3.6028504467010496
-
-Epoch:    4/10    Loss: 3.579986529350281
-
-Epoch:    4/10    Loss: 3.634956178665161
-
-Epoch:    4/10    Loss: 3.6336303091049196
-
-Epoch:    4/10    Loss: 3.609369673728943
-
-Epoch:    4/10    Loss: 3.604782433509827
-
-Epoch:    4/10    Loss: 3.612765235900879
-
-Epoch:    4/10    Loss: 3.5931894826889037
-
-Epoch:    4/10    Loss: 3.6410842514038086
-
-Epoch:    4/10    Loss: 3.589876732826233
-
-Epoch:    4/10    Loss: 3.6010336208343507
-
-Epoch:    4/10    Loss: 3.609085397720337
-
-Epoch:    4/10    Loss: 3.625520052909851
-
-Epoch:    4/10    Loss: 3.6318243980407714
-
-Epoch:    4/10    Loss: 3.631192798614502
-
-Epoch:    4/10    Loss: 3.5697201681137085
-
-Epoch:    4/10    Loss: 3.5999559354782105
-
-Epoch:    4/10    Loss: 3.6194331359863283
-
-Epoch:    4/10    Loss: 3.6101989793777465
-
-Epoch:    4/10    Loss: 3.621220254898071
-
-Epoch:    4/10    Loss: 3.657388858795166
-
-Epoch:    4/10    Loss: 3.6211977195739746
-
-Epoch:    4/10    Loss: 3.626392741203308
-
-Epoch:    4/10    Loss: 3.6361428403854372
-
-Epoch:    4/10    Loss: 3.6183080196380617
-
-Epoch:    4/10    Loss: 3.625016016960144
-
-Epoch:    4/10    Loss: 3.6445255517959594
-
-Epoch:    4/10    Loss: 3.595874128341675
-
-Epoch:    4/10    Loss: 3.5630017852783205
-
-Epoch:    4/10    Loss: 3.655679144859314
-
-Epoch:    4/10    Loss: 3.5805420017242433
-
-Epoch:    4/10    Loss: 3.622659430503845
-
-Epoch:    4/10    Loss: 3.6761690855026243
-
-Epoch:    4/10    Loss: 3.591322827339172
-
-Epoch:    4/10    Loss: 3.580625505447388
-
-Epoch:    4/10    Loss: 3.6157270431518556
-
-Epoch:    4/10    Loss: 3.650777745246887
-
-Epoch:    4/10    Loss: 3.6267447805404665
-
-Epoch:    4/10    Loss: 3.616747107505798
-
-Epoch:    4/10    Loss: 3.6264316415786744
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    5/10    Loss: 3.5233982846706726
-
-Epoch:    5/10    Loss: 3.503330874443054
-
-Epoch:    5/10    Loss: 3.473744306564331
-
-Epoch:    5/10    Loss: 3.4606672716140747
-
-Epoch:    5/10    Loss: 3.419068899154663
-
-Epoch:    5/10    Loss: 3.49391939163208
-
-Epoch:    5/10    Loss: 3.4655237340927125
-
-Epoch:    5/10    Loss: 3.4523447799682616
-
-Epoch:    5/10    Loss: 3.518098301887512
-
-Epoch:    5/10    Loss: 3.46623158454895
-
-Epoch:    5/10    Loss: 3.476583514213562
-
-Epoch:    5/10    Loss: 3.483432731628418
-
-Epoch:    5/10    Loss: 3.517839779853821
-
-Epoch:    5/10    Loss: 3.506742334365845
-
-Epoch:    5/10    Loss: 3.462592267990112
-
-Epoch:    5/10    Loss: 3.503547682762146
-
-Epoch:    5/10    Loss: 3.538060674667358
-
-Epoch:    5/10    Loss: 3.475129337310791
-
-Epoch:    5/10    Loss: 3.493854870796204
-
-Epoch:    5/10    Loss: 3.5207166337966918
-
-Epoch:    5/10    Loss: 3.5001905298233034
-
-Epoch:    5/10    Loss: 3.5088832139968873
-
-Epoch:    5/10    Loss: 3.5112065935134886
-
-Epoch:    5/10    Loss: 3.4954738998413086
-
-Epoch:    5/10    Loss: 3.529488830566406
-
-Epoch:    5/10    Loss: 3.4794841527938845
-
-Epoch:    5/10    Loss: 3.533247151374817
-
-Epoch:    5/10    Loss: 3.4856329917907716
-
-Epoch:    5/10    Loss: 3.5321294498443603
-
-Epoch:    5/10    Loss: 3.4984635877609254
-
-Epoch:    5/10    Loss: 3.4466325426101685
-
-Epoch:    5/10    Loss: 3.5077822494506834
-
-Epoch:    5/10    Loss: 3.519509630203247
-
-Epoch:    5/10    Loss: 3.515284538269043
-
-Epoch:    5/10    Loss: 3.4723458290100098
-
-Epoch:    5/10    Loss: 3.532194986343384
-
-Epoch:    5/10    Loss: 3.525833420753479
-
-Epoch:    5/10    Loss: 3.4790070486068725
-
-Epoch:    5/10    Loss: 3.4947077417373658
-
-Epoch:    5/10    Loss: 3.5544083166122435
-
-Epoch:    5/10    Loss: 3.513595471382141
-
-Epoch:    5/10    Loss: 3.516428337097168
-
-Epoch:    5/10    Loss: 3.5187523269653322
-
-Epoch:    5/10    Loss: 3.5401569414138794
-
-Epoch:    5/10    Loss: 3.5353933668136595
-
-Epoch:    5/10    Loss: 3.558709087371826
-
-Epoch:    5/10    Loss: 3.505782675743103
-
-Epoch:    5/10    Loss: 3.534243288040161
-
-Epoch:    5/10    Loss: 3.5308633613586426
-
-Epoch:    5/10    Loss: 3.5136782836914064
-
-Epoch:    5/10    Loss: 3.5220517253875734
-
-Epoch:    5/10    Loss: 3.542687916755676
-
-Epoch:    5/10    Loss: 3.5240841627120973
-
-Epoch:    5/10    Loss: 3.499325451850891
-
-Epoch:    5/10    Loss: 3.561418585777283
-
-Epoch:    5/10    Loss: 3.5309836196899416
-
-Epoch:    5/10    Loss: 3.553823947906494
-
-Epoch:    5/10    Loss: 3.4849879932403565
-
-Epoch:    5/10    Loss: 3.497361936569214
-
-Epoch:    5/10    Loss: 3.5062496662139893
-
-Epoch:    5/10    Loss: 3.472929015159607
-
-Epoch:    5/10    Loss: 3.5281036138534545
-
-Epoch:    5/10    Loss: 3.4923115158081055
-
-Epoch:    5/10    Loss: 3.5499304056167604
-
-Epoch:    5/10    Loss: 3.556497483253479
-
-Epoch:    5/10    Loss: 3.546930651664734
-
-Epoch:    5/10    Loss: 3.528633613586426
-
-Epoch:    5/10    Loss: 3.5579529714584353
-
-Epoch:    5/10    Loss: 3.5515561580657957
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    6/10    Loss: 3.4290884687930725
-
-Epoch:    6/10    Loss: 3.3992418003082276
-
-Epoch:    6/10    Loss: 3.366069951057434
-
-Epoch:    6/10    Loss: 3.4054091072082517
-
-Epoch:    6/10    Loss: 3.3904383325576783
-
-Epoch:    6/10    Loss: 3.3785848093032835
-
-Epoch:    6/10    Loss: 3.39944851398468
-
-Epoch:    6/10    Loss: 3.418146600723267
-
-Epoch:    6/10    Loss: 3.3649269723892212
-
-Epoch:    6/10    Loss: 3.394729232788086
-
-Epoch:    6/10    Loss: 3.415447306632996
-
-Epoch:    6/10    Loss: 3.3818046760559084
-
-Epoch:    6/10    Loss: 3.392738971710205
-
-Epoch:    6/10    Loss: 3.373785057067871
-
-Epoch:    6/10    Loss: 3.39440092086792
-
-Epoch:    6/10    Loss: 3.4187776851654053
-
-Epoch:    6/10    Loss: 3.447274017333984
-
-Epoch:    6/10    Loss: 3.3968456506729128
-
-Epoch:    6/10    Loss: 3.4111035823822022
-
-Epoch:    6/10    Loss: 3.4470840883255005
-
-Epoch:    6/10    Loss: 3.430086431503296
-
-Epoch:    6/10    Loss: 3.4445076847076415
-
-Epoch:    6/10    Loss: 3.4423281574249267
-
-Epoch:    6/10    Loss: 3.382672805786133
-
-Epoch:    6/10    Loss: 3.430472583770752
-
-Epoch:    6/10    Loss: 3.4127470684051513
-
-Epoch:    6/10    Loss: 3.433844428062439
-
-Epoch:    6/10    Loss: 3.376635637283325
-
-Epoch:    6/10    Loss: 3.411737265586853
-
-Epoch:    6/10    Loss: 3.421029419898987
-
-Epoch:    6/10    Loss: 3.418756880760193
-
-Epoch:    6/10    Loss: 3.3823870611190796
-
-Epoch:    6/10    Loss: 3.4201525402069093
-
-Epoch:    6/10    Loss: 3.392405605316162
-
-Epoch:    6/10    Loss: 3.435505452156067
-
-Epoch:    6/10    Loss: 3.409677977561951
-
-Epoch:    6/10    Loss: 3.4562448930740355
-
-Epoch:    6/10    Loss: 3.4114718866348266
-
-Epoch:    6/10    Loss: 3.446820607185364
-
-Epoch:    6/10    Loss: 3.437719521522522
-
-Epoch:    6/10    Loss: 3.434910087585449
-
-Epoch:    6/10    Loss: 3.4417872476577758
-
-Epoch:    6/10    Loss: 3.4509531021118165
-
-Epoch:    6/10    Loss: 3.4151650524139403
-
-Epoch:    6/10    Loss: 3.488188238143921
-
-Epoch:    6/10    Loss: 3.4546461391448973
-
-Epoch:    6/10    Loss: 3.4358893966674806
-
-Epoch:    6/10    Loss: 3.4015411949157714
-
-Epoch:    6/10    Loss: 3.4399581289291383
-
-Epoch:    6/10    Loss: 3.446908464431763
-
-Epoch:    6/10    Loss: 3.464755344390869
-
-Epoch:    6/10    Loss: 3.4317455673217774
-
-Epoch:    6/10    Loss: 3.429801321029663
-
-Epoch:    6/10    Loss: 3.486461811065674
-
-Epoch:    6/10    Loss: 3.4242761850357057
-
-Epoch:    6/10    Loss: 3.4807699632644655
-
-Epoch:    6/10    Loss: 3.432118129730225
-
-Epoch:    6/10    Loss: 3.4340922832489014
-
-Epoch:    6/10    Loss: 3.43134605884552
-
-Epoch:    6/10    Loss: 3.433000922203064
-
-Epoch:    6/10    Loss: 3.4276362800598146
-
-Epoch:    6/10    Loss: 3.4396225595474244
-
-Epoch:    6/10    Loss: 3.427945976257324
-
-Epoch:    6/10    Loss: 3.4139892148971556
-
-Epoch:    6/10    Loss: 3.430307469367981
-
-Epoch:    6/10    Loss: 3.4123201608657836
-
-Epoch:    6/10    Loss: 3.4649268198013305
-
-Epoch:    6/10    Loss: 3.4563683319091796
-
-Epoch:    6/10    Loss: 3.419218373298645
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    7/10    Loss: 3.3709619196155405
-
-Epoch:    7/10    Loss: 3.2893877601623536
-
-Epoch:    7/10    Loss: 3.2906024408340455
-
-Epoch:    7/10    Loss: 3.3317569494247437
-
-Epoch:    7/10    Loss: 3.319185929298401
-
-Epoch:    7/10    Loss: 3.320673270225525
-
-Epoch:    7/10    Loss: 3.307383255958557
-
-Epoch:    7/10    Loss: 3.310227799415588
-
-Epoch:    7/10    Loss: 3.3074987745285034
-
-Epoch:    7/10    Loss: 3.353656597137451
-
-Epoch:    7/10    Loss: 3.277561640739441
-
-Epoch:    7/10    Loss: 3.3069569158554075
-
-Epoch:    7/10    Loss: 3.3457841730117797
-
-Epoch:    7/10    Loss: 3.322730760574341
-
-Epoch:    7/10    Loss: 3.3218430566787718
-
-Epoch:    7/10    Loss: 3.3101791095733644
-
-Epoch:    7/10    Loss: 3.3279380226135253
-
-Epoch:    7/10    Loss: 3.3443872213363646
-
-Epoch:    7/10    Loss: 3.3269731760025025
-
-Epoch:    7/10    Loss: 3.319228458404541
-
-Epoch:    7/10    Loss: 3.2938281869888306
-
-Epoch:    7/10    Loss: 3.3817030954360963
-
-Epoch:    7/10    Loss: 3.2842356395721435
-
-Epoch:    7/10    Loss: 3.342810397148132
-
-Epoch:    7/10    Loss: 3.3575405216217042
-
-Epoch:    7/10    Loss: 3.3535428047180176
-
-Epoch:    7/10    Loss: 3.341446752548218
-
-Epoch:    7/10    Loss: 3.341440191268921
-
-Epoch:    7/10    Loss: 3.3629053974151613
-
-Epoch:    7/10    Loss: 3.3226369762420656
-
-Epoch:    7/10    Loss: 3.3715121793746947
-
-Epoch:    7/10    Loss: 3.3195904874801636
-
-Epoch:    7/10    Loss: 3.349350242614746
-
-Epoch:    7/10    Loss: 3.3973250150680543
-
-Epoch:    7/10    Loss: 3.343992748260498
-
-Epoch:    7/10    Loss: 3.3584581851959228
-
-Epoch:    7/10    Loss: 3.362248544692993
-
-Epoch:    7/10    Loss: 3.3556792640686037
-
-Epoch:    7/10    Loss: 3.3650747966766357
-
-Epoch:    7/10    Loss: 3.347544798851013
-
-Epoch:    7/10    Loss: 3.354714341163635
-
-Epoch:    7/10    Loss: 3.3739441585540773
-
-Epoch:    7/10    Loss: 3.390759434700012
-
-Epoch:    7/10    Loss: 3.354107131958008
-
-Epoch:    7/10    Loss: 3.3564930295944215
-
-Epoch:    7/10    Loss: 3.3723563385009765
-
-Epoch:    7/10    Loss: 3.356572208404541
-
-Epoch:    7/10    Loss: 3.3651951599121093
-
-Epoch:    7/10    Loss: 3.411819396018982
-
-Epoch:    7/10    Loss: 3.3989123344421386
-
-Epoch:    7/10    Loss: 3.375707402229309
-
-Epoch:    7/10    Loss: 3.3813018131256105
-
-Epoch:    7/10    Loss: 3.3308336544036865
-
-Epoch:    7/10    Loss: 3.345399374961853
-
-Epoch:    7/10    Loss: 3.4009989404678347
-
-Epoch:    7/10    Loss: 3.3677747535705564
-
-Epoch:    7/10    Loss: 3.4037905502319337
-
-Epoch:    7/10    Loss: 3.3673655939102174
-
-Epoch:    7/10    Loss: 3.349109420776367
-
-Epoch:    7/10    Loss: 3.354276976585388
-
-Epoch:    7/10    Loss: 3.372753782272339
-
-Epoch:    7/10    Loss: 3.394062361717224
-
-Epoch:    7/10    Loss: 3.3630523443222047
-
-Epoch:    7/10    Loss: 3.389317121505737
-
-Epoch:    7/10    Loss: 3.3930495023727416
-
-Epoch:    7/10    Loss: 3.3705473136901856
-
-Epoch:    7/10    Loss: 3.416471452713013
-
-Epoch:    7/10    Loss: 3.418359389305115
-
-Epoch:    7/10    Loss: 3.413030576705933
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    8/10    Loss: 3.275328663331044
-
-Epoch:    8/10    Loss: 3.256711883544922
-
-Epoch:    8/10    Loss: 3.2220779037475586
-
-Epoch:    8/10    Loss: 3.234297585487366
-
-Epoch:    8/10    Loss: 3.2406373023986816
-
-Epoch:    8/10    Loss: 3.2410394525527955
-
-Epoch:    8/10    Loss: 3.2538765382766726
-
-Epoch:    8/10    Loss: 3.2489866113662718
-
-Epoch:    8/10    Loss: 3.242453360557556
-
-Epoch:    8/10    Loss: 3.267941880226135
-
-Epoch:    8/10    Loss: 3.276421461105347
-
-Epoch:    8/10    Loss: 3.3014988040924074
-
-Epoch:    8/10    Loss: 3.2667232656478884
-
-Epoch:    8/10    Loss: 3.2471976137161254
-
-Epoch:    8/10    Loss: 3.2747698974609376
-
-Epoch:    8/10    Loss: 3.2586523962020872
-
-Epoch:    8/10    Loss: 3.2733250141143797
-
-Epoch:    8/10    Loss: 3.273108820915222
-
-Epoch:    8/10    Loss: 3.293449935913086
-
-Epoch:    8/10    Loss: 3.291836838722229
-
-Epoch:    8/10    Loss: 3.250622954368591
-
-Epoch:    8/10    Loss: 3.2756863498687743
-
-Epoch:    8/10    Loss: 3.2508445167541504
-
-Epoch:    8/10    Loss: 3.3142484045028686
-
-Epoch:    8/10    Loss: 3.269625663757324
-
-Epoch:    8/10    Loss: 3.282170171737671
-
-Epoch:    8/10    Loss: 3.285111107826233
-
-Epoch:    8/10    Loss: 3.236340160369873
-
-Epoch:    8/10    Loss: 3.3127135276794433
-
-Epoch:    8/10    Loss: 3.2893027210235597
-
-Epoch:    8/10    Loss: 3.2634396600723266
-
-Epoch:    8/10    Loss: 3.2877820253372194
-
-Epoch:    8/10    Loss: 3.3048774433135986
-
-Epoch:    8/10    Loss: 3.251682186126709
-
-Epoch:    8/10    Loss: 3.300633306503296
-
-Epoch:    8/10    Loss: 3.300462303161621
-
-Epoch:    8/10    Loss: 3.324835567474365
-
-Epoch:    8/10    Loss: 3.288667321205139
-
-Epoch:    8/10    Loss: 3.3007864713668824
-
-Epoch:    8/10    Loss: 3.288016529083252
-
-Epoch:    8/10    Loss: 3.3051346015930174
-
-Epoch:    8/10    Loss: 3.2834377574920652
-
-Epoch:    8/10    Loss: 3.303220829963684
-
-Epoch:    8/10    Loss: 3.3092822933197024
-
-Epoch:    8/10    Loss: 3.295450921058655
-
-Epoch:    8/10    Loss: 3.32286199092865
-
-Epoch:    8/10    Loss: 3.3190003728866575
-
-Epoch:    8/10    Loss: 3.312473554611206
-
-Epoch:    8/10    Loss: 3.3566610765457154
-
-Epoch:    8/10    Loss: 3.2976982498168947
-
-Epoch:    8/10    Loss: 3.314339909553528
-
-Epoch:    8/10    Loss: 3.288476891517639
-
-Epoch:    8/10    Loss: 3.297292790412903
-
-Epoch:    8/10    Loss: 3.2950920343399046
-
-Epoch:    8/10    Loss: 3.309465775489807
-
-Epoch:    8/10    Loss: 3.2878358030319212
-
-Epoch:    8/10    Loss: 3.316541647911072
-
-Epoch:    8/10    Loss: 3.325527935028076
-
-Epoch:    8/10    Loss: 3.314842309951782
-
-Epoch:    8/10    Loss: 3.335976824760437
-
-Epoch:    8/10    Loss: 3.3288862037658693
-
-Epoch:    8/10    Loss: 3.3086511182785032
-
-Epoch:    8/10    Loss: 3.3168138074874878
-
-Epoch:    8/10    Loss: 3.3502178812026977
-
-Epoch:    8/10    Loss: 3.3072837495803835
-
-Epoch:    8/10    Loss: 3.332944369316101
-
-Epoch:    8/10    Loss: 3.3229356813430786
-
-Epoch:    8/10    Loss: 3.367685008049011
-
-Epoch:    8/10    Loss: 3.3411106204986574
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:    9/10    Loss: 3.220444458949415
-
-Epoch:    9/10    Loss: 3.1888019609451295
-
-Epoch:    9/10    Loss: 3.172673478126526
-
-Epoch:    9/10    Loss: 3.1804278802871706
-
-Epoch:    9/10    Loss: 3.172780656814575
-
-Epoch:    9/10    Loss: 3.2051974391937255
-
-Epoch:    9/10    Loss: 3.202170705795288
-
-Epoch:    9/10    Loss: 3.242681345939636
-
-Epoch:    9/10    Loss: 3.1856192207336425
-
-Epoch:    9/10    Loss: 3.1497166395187377
-
-Epoch:    9/10    Loss: 3.1751660776138304
-
-Epoch:    9/10    Loss: 3.2093537569046022
-
-Epoch:    9/10    Loss: 3.214389524459839
-
-Epoch:    9/10    Loss: 3.220056381225586
-
-Epoch:    9/10    Loss: 3.2134001636505127
-
-Epoch:    9/10    Loss: 3.2378309535980225
-
-Epoch:    9/10    Loss: 3.2341020679473877
-
-Epoch:    9/10    Loss: 3.187546339035034
-
-Epoch:    9/10    Loss: 3.2219109773635863
-
-Epoch:    9/10    Loss: 3.2333967781066892
-
-Epoch:    9/10    Loss: 3.2160933589935303
-
-Epoch:    9/10    Loss: 3.2534483575820925
-
-Epoch:    9/10    Loss: 3.2214529943466186
-
-Epoch:    9/10    Loss: 3.2316217279434203
-
-Epoch:    9/10    Loss: 3.245149841308594
-
-Epoch:    9/10    Loss: 3.2337979745864867
-
-Epoch:    9/10    Loss: 3.225572123527527
-
-Epoch:    9/10    Loss: 3.2232510662078857
-
-Epoch:    9/10    Loss: 3.2887595796585085
-
-Epoch:    9/10    Loss: 3.2035164833068848
-
-Epoch:    9/10    Loss: 3.2271451330184937
-
-Epoch:    9/10    Loss: 3.2451611089706422
-
-Epoch:    9/10    Loss: 3.2263004398345947
-
-Epoch:    9/10    Loss: 3.2616583061218263
-
-Epoch:    9/10    Loss: 3.2268272495269774
-
-Epoch:    9/10    Loss: 3.2528570652008058
-
-Epoch:    9/10    Loss: 3.2243725776672365
-
-Epoch:    9/10    Loss: 3.2322888231277465
-
-Epoch:    9/10    Loss: 3.2509694623947145
-
-Epoch:    9/10    Loss: 3.2302798414230347
-
-Epoch:    9/10    Loss: 3.292994556427002
-
-Epoch:    9/10    Loss: 3.2183849239349365
-
-Epoch:    9/10    Loss: 3.242877402305603
-
-Epoch:    9/10    Loss: 3.269102544784546
-
-Epoch:    9/10    Loss: 3.2448521947860716
-
-Epoch:    9/10    Loss: 3.252117280960083
-
-Epoch:    9/10    Loss: 3.2316121578216555
-
-Epoch:    9/10    Loss: 3.2877648448944092
-
-Epoch:    9/10    Loss: 3.2686219930648805
-
-Epoch:    9/10    Loss: 3.270390062332153
-
-Epoch:    9/10    Loss: 3.2759341764450074
-
-Epoch:    9/10    Loss: 3.2516991233825685
-
-Epoch:    9/10    Loss: 3.266815972328186
-
-Epoch:    9/10    Loss: 3.279834246635437
-
-Epoch:    9/10    Loss: 3.2492961263656617
-
-Epoch:    9/10    Loss: 3.258436441421509
-
-Epoch:    9/10    Loss: 3.290672917366028
-
-Epoch:    9/10    Loss: 3.271981706619263
-
-Epoch:    9/10    Loss: 3.263182353973389
-
-Epoch:    9/10    Loss: 3.2777335023880005
-
-Epoch:    9/10    Loss: 3.2770776557922363
-
-Epoch:    9/10    Loss: 3.278868975639343
-
-Epoch:    9/10    Loss: 3.2906273794174195
-
-Epoch:    9/10    Loss: 3.244353575706482
-
-Epoch:    9/10    Loss: 3.296621766090393
-
-Epoch:    9/10    Loss: 3.266387691497803
-
-Epoch:    9/10    Loss: 3.2641201496124266
-
-Epoch:    9/10    Loss: 3.279239020347595
-
-Epoch:    9/10    Loss: 3.2836034870147706
-
-torch.Size([2, 256, 300]) torch.Size([21388, 300])
-Epoch:   10/10    Loss: 3.230143215082869
-
-Epoch:   10/10    Loss: 3.136844959259033
-
-Epoch:   10/10    Loss: 3.158413443565369
-
-Epoch:   10/10    Loss: 3.1234498834609985
-
-Epoch:   10/10    Loss: 3.1300391244888304
-
-Epoch:   10/10    Loss: 3.147607431411743
-
-Epoch:   10/10    Loss: 3.1270325660705565
-
-Epoch:   10/10    Loss: 3.156995553970337
-
-Epoch:   10/10    Loss: 3.138389163017273
-
-Epoch:   10/10    Loss: 3.151181926727295
-
-Epoch:   10/10    Loss: 3.1789566707611083
-
-Epoch:   10/10    Loss: 3.174202227592468
-
-Epoch:   10/10    Loss: 3.16527822971344
-
-Epoch:   10/10    Loss: 3.1967425107955934
-
-Epoch:   10/10    Loss: 3.1436645555496217
-
-Epoch:   10/10    Loss: 3.1538369703292846
-
-Epoch:   10/10    Loss: 3.2018937063217163
-
-Epoch:   10/10    Loss: 3.145248279571533
-
-Epoch:   10/10    Loss: 3.147152891159058
-
-Epoch:   10/10    Loss: 3.194581823348999
-
-Epoch:   10/10    Loss: 3.1787277460098267
-
-Epoch:   10/10    Loss: 3.149431977272034
-
-Epoch:   10/10    Loss: 3.2208313608169554
-
-Epoch:   10/10    Loss: 3.135851974487305
-
-Epoch:   10/10    Loss: 3.1922270393371583
-
-Epoch:   10/10    Loss: 3.1946662521362303
-
-Epoch:   10/10    Loss: 3.1791939544677734
-
-Epoch:   10/10    Loss: 3.216896152496338
-
-Epoch:   10/10    Loss: 3.2022179794311523
-
-Epoch:   10/10    Loss: 3.1768268489837648
-
-Epoch:   10/10    Loss: 3.175298476219177
-
-Epoch:   10/10    Loss: 3.202873945236206
-
-Epoch:   10/10    Loss: 3.2006951570510864
-
-Epoch:   10/10    Loss: 3.245281343460083
-
-Epoch:   10/10    Loss: 3.208410062789917
-
-Epoch:   10/10    Loss: 3.241091260910034
-
-Epoch:   10/10    Loss: 3.2062382316589355
-
-Epoch:   10/10    Loss: 3.179684557914734
-
-Epoch:   10/10    Loss: 3.222393126487732
-
-Epoch:   10/10    Loss: 3.2091101741790773
-
-Epoch:   10/10    Loss: 3.2066656827926634
-
-Epoch:   10/10    Loss: 3.2300497007369997
-
-Epoch:   10/10    Loss: 3.1981528186798096
-
-Epoch:   10/10    Loss: 3.1757738399505615
-
-Epoch:   10/10    Loss: 3.206173152923584
-
-Epoch:   10/10    Loss: 3.206820178031921
-
-Epoch:   10/10    Loss: 3.2314783096313477
-
-Epoch:   10/10    Loss: 3.2017690324783326
-
-Epoch:   10/10    Loss: 3.1998072767257693
-
-Epoch:   10/10    Loss: 3.18604838848114
-
-Epoch:   10/10    Loss: 3.199174613952637
-
-Epoch:   10/10    Loss: 3.242410521507263
-
-Epoch:   10/10    Loss: 3.20509952545166
-
-Epoch:   10/10    Loss: 3.2409601545333864
-
-Epoch:   10/10    Loss: 3.209604525566101
-
-Epoch:   10/10    Loss: 3.232810683250427
-
-Epoch:   10/10    Loss: 3.215033049583435
-
-Epoch:   10/10    Loss: 3.2142967653274535
-
-Epoch:   10/10    Loss: 3.2596470403671263
-
-Epoch:   10/10    Loss: 3.2012886142730714
-
-Epoch:   10/10    Loss: 3.2811955881118773
-
-Epoch:   10/10    Loss: 3.1977207469940185
-
-Epoch:   10/10    Loss: 3.245845522880554
-
-Epoch:   10/10    Loss: 3.2075652742385863
-
-Epoch:   10/10    Loss: 3.237778000831604
-
-Epoch:   10/10    Loss: 3.2199803972244263
-
-Epoch:   10/10    Loss: 3.235097599029541
-
-Epoch:   10/10    Loss: 3.246781897544861
-
-Epoch:   10/10    Loss: 3.26494074344635
+Epoch:   10/10    Loss: 3.2792955932617187
 
 </pre>
 </div>
@@ -15543,7 +14212,7 @@ Epoch:   10/10    Loss: 3.26494074344635
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -15638,7 +14307,7 @@ Epoch:   10/10    Loss: 3.26494074344635
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run the cell multiple times to get different results!</span>
@@ -15666,19 +14335,30 @@ Epoch:   10/10    Loss: 3.26494074344635
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/opt/conda/lib/python3.6/site-packages/ipykernel_launcher.py:43: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greatly increasing memory usage. To compact weights again call flatten_parameters().
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>elaine: bungie lola bungie lola maxed lola &#39;the stashed laughingly sectional contend surcharge reserve helloooo million million through monica bungie cleanin&#39; youth marion&#39;s locket gondola helloooo million million through [5a bungie binoculars thumb helloooo million million hehehehehe perceptive &#39;the fudge &#39;who dewy genitals exploited million million going&#39; fudge morale bungie beveridged cracked martone disturb dewy submerged group: commending applause locket piston helloooo million million through beveridged *please* scoop freebie helloooo million million through monica bungie beveridged *please* morale de beveridged articulated rolls pardon helloooo beveridged cracked scouts yapping fudge involved helloooo beveridged heeeeyyyy bungie fudge articulated dewy up&#39; dewy locket represented bungie maxed pleasantly stinking beveridged waiter: laughingly [pause kool operating helloooo million million hehehehehe beveridged shocking notch ahehehehe dewy amazed laughingly [pause optioned arguments script helloooo million million through freebie perceptive exploited million million [in sit monocle irritability cashemere bungie cashemere bungie cashemere bungie beveridged tan: helloooo helloooo helloooo helloooo helloooo helloooo helloooo helloooo million million through perceptive &#39;the fudge incapable sights exploited million million [in sit sander dewy laser bungie fourty whaler] group: paul irritability beveridged tan: &#39;mental brimming helloooo beveridged heeeeyyyy bungie perceptive ago contend slayings examine group: exploited million million going&#39; [5a bungie *boys* bungie *boys* bungie
+<pre>elaine:......
+
+jerry: oh, i don&#39;t like the guy in the middle of a good samaritan..
+
+jerry: well, i&#39;m gonna be a big fan of a party, huh?
+
+jerry: i was in my bathroom, you know, you can get a big salad, and i have to be here.
+
+jerry: i don&#39;t know, you can&#39;t tell me!
+
+jerry:(to george) you know, i think it&#39;s a great idea.
+
+jerry:(to the phone) hello.
+
+jerry:(to jerry, to jerry) what is this, you don&#39;t even like to talk to her, i don&#39;t know how you feel, but i don&#39;t think i can be able to get involved with this.
+
+jerry:(to jerry) i don&#39;t think so!
+
+jerry: well.(to the teller) i can&#39;t believe it.
+
+jerry: oh, i think it&#39;s a big deal.
+
+elaine: oh, yeah. i got a
 </pre>
 </div>
 </div>
@@ -15697,7 +14377,7 @@ Epoch:   10/10    Loss: 3.26494074344635
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># save script to a text file</span>
